@@ -1,24 +1,28 @@
 [![MIT License][license-badge]][LICENSE]
 
-# scala-play-react-seed
+# Scala Play React Seed
 
-> scala-play-angular-seed project illustrates how Play Framework can be used to develop backend/services along with Angular to develop the front-end/ui.
+> java-play-react-seed project illustrates how Play Framework can be used to develop backend/services along with [React](https://reactjs.org/) to develop the front-end/ui.
 
 Read more @ http://bit.ly/2AStvhK
 
 ## Used Versions
 
-* [Play Framework: 2.6.7](https://www.playframework.com/documentation/2.6.x/Home)
-* [Angular: 5.0.0](https://angular.io/)
-* [Angular CLI: 1.6.0](https://cli.angular.io/)
+* [Play Framework: 2.6.9](https://www.playframework.com/documentation/2.6.x/Home)
+* [React: 16.2.0](https://reactjs.org/)
+* [Create React App: 1.0.17](https://github.com/facebookincubator/create-react-app)
 
-## How to use it?
+## How to use it? 
+
+### Prerequisites
+
+* This assumes that you have [npm](https://npmjs.org/) installed.
 
 ### Let's get started,
 
 * Clone the application and open application as a sbt project.
 
-* This application is not using any of the scala play views and all the views are served by the [Angular](https://angular.io/) code base which is inside the `ui` folder.
+* This application is not using any of the java play views and all the views are served by the [React](https://reactjs.org/) code base which is inside the `ui` folder.
 
 * Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
@@ -32,12 +36,12 @@ Read more @ http://bit.ly/2AStvhK
     sbt dist            # Build both backend and frontend sources into a single distribution
     
     sbt test            # Run both backend and frontend unit tests 
-```  
+```
 
 ## Complete Directory Layout
 
 ```
-├── /app/                           # The backend (scala) application sources (controllers, models, views, assets)
+├── /app/                           # The backend (java) application sources (controllers, models, views, assets)
 ├── /conf/                          # Configurations files and other non-compiled resources (on classpath)
 │     ├── application.conf          # Builds the project from source to output(lib and bower) folder
 │     ├── logback.xml               # Logging configuration
@@ -54,21 +58,16 @@ Read more @ http://bit.ly/2AStvhK
 ├── /target/                        # Generated stuff
 │     ├── /universal/               # Application packaging
 │     └── /web/                     # Compiled web assets
-├── /test/                          # Contains unit tests for scala play sources
-├── /ui/                            # Angular front end sources
-│     ├── /e2e/                     # End to end tests folder
+├── /test/                          # Contains unit tests for java play sources
+├── /ui/                            # React front end sources
+│     ├── /public/                  # Contains the index.html file
 │     ├── /node_modules/            # 3rd-party frontend libraries and utilities
 │     ├── /src/                     # The frontend source code (modules, componensts, models, directives, services etc.) of the application
-│     ├── .angular-cli.json         # Builds the project from source to output(lib and bower) folder
 │     ├── .editorconfig             # Define and maintain consistent coding styles between different editors and IDEs
 │     ├── .gitignore                # Contains ui files to be ignored when pushing to git
-│     ├── karma.conf.js             # Karma configuration file
 │     ├── package.json              # Holds various metadata configuration relevant to the ui
-│     ├── protractor.conf.js        # Protractor configuration file
-│     ├── proxy.conf.json           # UI proxy configuration
 │     ├── README.md                 # Contains all user guide details for the ui
-│     ├── tsconfig.json             # Contains typescript compiler options
-│     └── tslint.json               # Lint rules for the ui
+│     └── yarn.lock                 # Yarn lock file
 ├── .gitignore                      # Contains files to be ignored when pushing to git
 ├── build.sbt                       # Play application build script
 ├── LICENSE                         # Contains License Agreement file
@@ -87,9 +86,10 @@ Read more @ http://bit.ly/2AStvhK
     │     ├── FrontendCommands.scala
 ```
 
+
 ### FrontendRunHook.scala
 
-* Represents PlayRunHook scala implementation to trigger angular serve with sbt run command.
+* Represents PlayRunHook scala implementation to trigger react start with sbt run command.
 
 ```
     ├── /project/
@@ -107,17 +107,8 @@ Read more @ http://bit.ly/2AStvhK
 * Check [UI README.md](./ui/README.md) to see the available front end build tasks.
 
 ```
-├── /ui/
-│     ├── package.json
-```
-
-### proxy.conf.json
-
-* Contains proxy configurations required to run application in watch mode along with both `Scala` and `Angular` builds.
-
-```
-├── /ui/
-│     ├── proxy.conf.json
+├── /ui/                       
+│     ├── package.json          
 ```
 
 ## Routes
@@ -130,10 +121,16 @@ Read more @ http://bit.ly/2AStvhK
 * The following route configuration allows to map front end index.html to index route. This should be placed as the first route in this file.
 
 ```
-GET        /             controllers.Assets.at(path="/public/ui", file="index.html")
+GET        /             controllers.Assets.at(path="/public", file="index.html")
 ```
 
-**Note: _On production build all the front end Angular build artifacts will be copied to the `public/ui` folder._**
+* THe following asset route is being used to serve all the build artifacts (css, js) and static files (images, etc.). This should be placed as the last route in route config file.
+
+```
+GET        /*file        controllers.Assets.at(path="/public", file)
+```
+
+**Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**
 
 ## Contributors
 
@@ -147,7 +144,7 @@ GET        /             controllers.Assets.at(path="/public/ui", file="index.ht
 This software is licensed under the MIT license
 
 [license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
-[license]: https://github.com/yohangz/scala-play-angular-seed/blob/master/LICENSE
+[license]: https://github.com/yohangz/java-play-react-seed/blob/master/README.md
 
 [yohan-profile]: https://github.com/yohangz
 [lahiru-profile]: https://github.com/lahiruz
