@@ -3,7 +3,7 @@ import { HashRouter, Route, Link } from 'react-router-dom';
 
 import reactLogo from './images/react.svg';
 import playLogo from './images/play.svg';
-import javaLogo from './images/java.webp';
+import scalaLogo from './images/scala.png';
 
 import './App.css';
 
@@ -34,7 +34,7 @@ class App extends Component {
           <h1>Welcome to {this.state.title}!</h1>
           <nav>
             <Link to="java" >
-              <img width="400" height="400" src={javaLogo} alt="Java Logo" />
+              <img width="400" height="400" src={scalaLogo} alt="Java Logo" />
             </Link>
             <Link to="play" >
               <img width="400" height="400" src={playLogo} alt="Play Framework Logo" />
