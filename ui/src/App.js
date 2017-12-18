@@ -33,8 +33,8 @@ class App extends Component {
         <div className="App">
           <h1>Welcome to {this.state.title}!</h1>
           <nav>
-            <Link to="java" >
-              <img width="400" height="400" src={scalaLogo} alt="Java Logo" />
+            <Link to="scala" >
+              <img  width="450" height="300"  src={scalaLogo} alt="Scala Logo" />
             </Link>
             <Link to="play" >
               <img width="400" height="400" src={playLogo} alt="Play Framework Logo" />
