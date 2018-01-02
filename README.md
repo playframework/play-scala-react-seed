@@ -4,7 +4,7 @@
 
 > java-play-react-seed project illustrates how Play Framework can be used to develop backend/services along with [React](https://reactjs.org/) to develop the front-end/ui.
 
-Read more @ http://bit.ly/2AStvhK
+Read more @ http://bit.ly/2A1AzEq
 
 ## Used Versions
 
