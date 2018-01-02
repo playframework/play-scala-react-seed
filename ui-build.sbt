@@ -10,7 +10,7 @@ val Success = 0
 // Execution status failure.
 val Error = 1
 
-// Run angular serve task when Play runs in dev mode, that is, when using 'sbt run'
+// Run serve task when Play runs in dev mode, that is, when using 'sbt run'
 // https://www.playframework.com/documentation/2.6.x/SBTCookbook
 PlayKeys.playRunHooks += baseDirectory.map(FrontendRunHook.apply).value
 
