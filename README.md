@@ -2,7 +2,7 @@
 
 # Scala Play React Seed
 
-> java-play-react-seed project illustrates how Play Framework can be used to develop backend/services along with [React](https://reactjs.org/) to develop the front-end/ui.
+> scala-play-react-seed project illustrates how Play Framework can be used to develop backend/services along with [React](https://reactjs.org/) to develop the front-end/ui.
 
 Read more @ http://bit.ly/2A1AzEq
 
@@ -17,12 +17,13 @@ Read more @ http://bit.ly/2A1AzEq
 ### Prerequisites
 
 * This assumes that you have [npm](https://npmjs.org/) installed.
+* Must have [scala](https://www.scala-lang.org/download/) installed.
 
 ### Let's get started,
 
 * Clone the application and open application as a sbt project.
 
-* This application is not using any of the java play views and all the views are served by the [React](https://reactjs.org/) code base which is inside the `ui` folder.
+* This application is not using any of the [scala](https://www.playframework.com/documentation/2.6.x/ScalaHome) play views and all the views are served by the [React](https://reactjs.org/) code base which is inside the `ui` folder.
 
 * Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
@@ -130,6 +131,13 @@ GET        /*file        controllers.Assets.at(path="/public", file)
 ```
 
 **Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**
+
+## Can be used to implement any front end/ui build!
+
+* Simply replace the ui directory with the build of your choice
+* Make output directory ROOT/public/
+* Implement a proxy to localhost:9000
+* Check out this [Vuejs example](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
 
 ## Contributors
 
