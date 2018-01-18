@@ -137,7 +137,13 @@ GET        /*file        controllers.Assets.at(path="/public", file)
 * Simply replace the ui directory with the build of your choice
 * Make output directory ROOT/public/
 * Implement a proxy to localhost:9000
-* Check out this [Vuejs example](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
+
+## Looking for some other frontend framework or language choice
+
+* [Java Play React Seed](https://github.com/yohangz/java-play-react-seed)
+* [Scala Play Angular Seed](https://github.com/yohangz/scala-play-angular-seed)
+* [Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed)
+* [Scala Play Vuejs Seed](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
 
 ## Contributors
 
