@@ -12,7 +12,7 @@ Read more @ http://bit.ly/2A1AzEq
 * [React: 16.2.0](https://reactjs.org/)
 * [Create React App: 1.0.17](https://github.com/facebookincubator/create-react-app)
 
-## How to use it? 
+## How to use it?
 
 ### Prerequisites
 
@@ -27,16 +27,16 @@ Read more @ http://bit.ly/2A1AzEq
 
 * Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
 
-``` 
+```
     sbt clean           # Clear existing build files
-    
+
     sbt stage           # Build your application from your project’s source directory
-    
+
     sbt run             # Run both backend and frontend builds in watch mode
-    
+
     sbt dist            # Build both backend and frontend sources into a single distribution
-    
-    sbt test            # Run both backend and frontend unit tests 
+
+    sbt test            # Run both backend and frontend unit tests
 ```
 
 ## Complete Directory Layout
@@ -115,7 +115,7 @@ Read more @ http://bit.ly/2A1AzEq
 
 ```
 ├── /conf/      
-│     ├── routes 
+│     ├── routes
 ```
 
 * The following route configuration allows to map front end index.html to index route. This should be placed as the first route in this file.
@@ -144,6 +144,7 @@ GET        /*file        controllers.Assets.at(path="/public", file)
 * [Scala Play Angular Seed](https://github.com/yohangz/scala-play-angular-seed)
 * [Java Play Angular Seed](https://github.com/yohangz/java-play-angular-seed)
 * [Scala Play Vuejs Seed](https://github.com/duncannevin/scala-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
+* [Java Play Vuejs Seed](https://github.com/duncannevin/java-play-vue-seed) by [Duncan Nevin](https://github.com/duncannevin)
 
 ## Contributors
 
