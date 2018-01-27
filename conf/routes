@@ -3,10 +3,10 @@
 # ~~~~
 
 # Load index page
-GET     /                           controllers.Assets.at(path="/public", file="index.html")
+GET     /                           controllers.FrontendController.index()
 
 # An example route
 GET     /summary                    controllers.HomeController.appSummary
 
 # Map static resources from the /public folder to the file resource path
-GET     /*file                      controllers.Assets.at(path="/public", file)
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)

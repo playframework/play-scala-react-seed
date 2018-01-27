@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 import Client from "./Client";
 
@@ -30,7 +34,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <Router>
         <div className="App">
           <h1>Welcome to {this.state.title}!</h1>
           <nav>
@@ -54,9 +58,8 @@ class App extends Component {
             </h3>
           </div>
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
-
 export default App;
