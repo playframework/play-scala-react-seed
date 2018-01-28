@@ -6,6 +6,8 @@
 
 Read more @ http://bit.ly/2A1AzEq
 
+![alt text](https://github.com/yohangz/scala-play-react-seed/react.png)
+
 ## Used Versions
 
 * [Play Framework: 2.6.9](https://www.playframework.com/documentation/2.6.x/Home)
