@@ -44,37 +44,39 @@ Read more @ http://bit.ly/2A1AzEq
 ## Complete Directory Layout
 
 ```
-├── /app/                           # The backend (scala) application sources (controllers, models, views, assets)
-├── /conf/                          # Configurations files and other non-compiled resources (on classpath)
-│     ├── application.conf          # Builds the project from source to output(lib and bower) folder
-│     ├── logback.xml               # Logging configuration
-│     └── routes                    # Routes definition
-├── /logs/                          # Logs folder
-│     └── application.log           # Default log file
-├── /project/                       # Sbt configuration files
-│     ├── FrontendCommands.scala    # Frontend build commands
-│     ├── FrontendRunHook.scala     # Forntend build PlayRunHook (trigger frontend serve on sbt run)
-│     ├── build.properties          # Marker for sbt project
-│     └── plugins.sbt               # Sbt plugins declaration
-├── /public/                        # Frontend build artifacts will be copied to this directory
-├── /target/                        # Generated stuff
-│     ├── /universal/               # Application packaging
-│     └── /web/                     # Compiled web assets
-├── /test/                          # Contains unit tests for java play sources
-├── /ui/                            # React front end sources
-│     ├── /public/                  # Contains the index.html file
-│     ├── /node_modules/            # 3rd-party frontend libraries and utilities
-│     ├── /src/                     # The frontend source code (modules, componensts, models, directives, services etc.) of the application
-│     ├── .editorconfig             # Define and maintain consistent coding styles between different editors and IDEs
-│     ├── .gitignore                # Contains ui files to be ignored when pushing to git
-│     ├── package.json              # Holds various metadata configuration relevant to the ui
-│     ├── README.md                 # Contains all user guide details for the ui
-│     └── yarn.lock                 # Yarn lock file
-├── .gitignore                      # Contains files to be ignored when pushing to git
-├── build.sbt                       # Play application build script
-├── LICENSE                         # Contains License Agreement file
-├── README.md                       # Contains all user guide details for the application
-└── ui-build.sbt                    # Associated frontend build scripts with sbt
+├── /app/                                 # The backend (java) application sources (controllers, models, views, assets)
+│     └── /controllers/                   # Contains backend controller files
+│           └── FrontendController.scala  # Frontend controller managing all static resource associate routes
+├── /conf/                                # Configurations files and other non-compiled resources (on classpath)
+│     ├── application.conf                # Builds the project from source to output(lib and bower) folder
+│     ├── logback.xml                     # Logging configuration
+│     └── routes                          # Routes definition
+├── /logs/                                # Logs folder
+│     └── application.log                 # Default log file
+├── /project/                             # Sbt configuration files
+│     ├── FrontendCommands.scala          # Frontend build commands
+│     ├── FrontendRunHook.scala           # Forntend build PlayRunHook (trigger frontend serve on sbt run)
+│     ├── build.properties                # Marker for sbt project
+│     └── plugins.sbt                     # Sbt plugins declaration
+├── /public/                              # Frontend build artifacts will be copied to this directory
+├── /target/                              # Generated stuff
+│     ├── /universal/                     # Application packaging
+│     └── /web/                           # Compiled web assets
+├── /test/                                # Contains unit tests for java play sources
+├── /ui/                                  # React front end sources
+│     ├── /public/                        # Contains the index.html file
+│     ├── /node_modules/                  # 3rd-party frontend libraries and utilities
+│     ├── /src/                           # The frontend source code (modules, componensts, models, directives, services etc.) of the application
+│     ├── .editorconfig                   # Define and maintain consistent coding styles between different editors and IDEs
+│     ├── .gitignore                      # Contains ui files to be ignored when pushing to git
+│     ├── package.json                    # Holds various metadata configuration relevant to the ui
+│     ├── README.md                       # Contains all user guide details for the ui
+│     └── yarn.lock                       # Yarn lock file
+├── .gitignore                            # Contains files to be ignored when pushing to git
+├── build.sbt                             # Play application build script
+├── LICENSE                               # Contains License Agreement file
+├── README.md                             # Contains all user guide details for the application
+└── ui-build.sbt                          # Associated frontend build scripts with sbt
 ```
 
 ## What is new in here?
