@@ -6,7 +6,7 @@
 
 Read more @ http://bit.ly/2A1AzEq
 
-![alt text](https://github.com/yohangz/scala-play-react-seed/react.png)
+![Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed/blob/master/react.png)
 
 ## Used Versions
 
