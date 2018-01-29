@@ -6,7 +6,7 @@
 GET     /                           controllers.FrontendController.index()
 
 # An example route
-GET     /api/summary                    controllers.HomeController.appSummary
+GET     /api/summary                controllers.HomeController.appSummary
 
 # Map static resources from the /public folder to the file resource path
 GET     /*file                      controllers.FrontendController.assetOrDefault(file)
