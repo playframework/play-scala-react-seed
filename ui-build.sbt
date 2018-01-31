@@ -19,7 +19,7 @@ val isWindows = System.getProperty("os.name").toLowerCase().contains("win")
 
 // Execute on commandline, depending on the operating system. Used to execute npm commands.
 def runOnCommandline(script: String)(implicit dir: File): Int = {
-  if(isWindows){ Process("cmd /c " + script, dir) } else { Process(script, dir) } }!
+  if(isWindows){ Process("cmd /c set CI=true&&" + script, dir) } else { Process("env CI=true " + script, dir) } }!
 
 // Check of node_modules directory exist in given directory.
 def isNodeModulesInstalled(implicit dir: File): Boolean = (dir / "node_modules").exists()
