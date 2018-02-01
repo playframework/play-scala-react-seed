@@ -2,13 +2,14 @@
 
 # Scala Play React Seed
 
-> scala-play-react-seed project illustrates how Play Framework can be used to develop backend/services along with [React](https://reactjs.org/) to develop the front-end/ui.
+> Use play framework to develop the web application backend/services and frontend using React Create App, all in a totally integrated workflow and single unified console. This approach will deliver perfect development experience without CORS hassle. 
+ 
 
 Read more @ http://bit.ly/2A1AzEq
 
 [![Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq)
 
-## Used Versions
+## Version Summary
 
 * [Play Framework: 2.6.9](https://www.playframework.com/documentation/2.6.x/Home)
 * [React: 16.2.0](https://reactjs.org/)
@@ -18,72 +19,72 @@ Read more @ http://bit.ly/2A1AzEq
 
 ### Prerequisites
 
-* This assumes that you have [npm](https://npmjs.org/) installed.
-* Must have [scala](https://www.scala-lang.org/download/) installed.
+* [Node.js](https://nodejs.org/)
+* [scala](https://www.scala-lang.org/download/)
 
 ### Let's get started,
 
-* Clone the application and open application as a sbt project.
+* Fork or clone this repository.
 
-* This application is not using any of the [scala](https://www.playframework.com/documentation/2.6.x/ScalaHome) play views and all the views are served by the [React](https://reactjs.org/) code base which is inside the `ui` folder.
-
-* Used any of the sbt commands listed in the below according to the requirement which are working fine with this application.(To see more details of [sbt](http://www.scala-sbt.org/))
+* Used any of the following [SBT](http://www.scala-sbt.org/) commands which will intern trigger frontend associated npm scripts.
 
 ```
-    sbt clean           # Clear existing build files
+    sbt clean           # Clean existing build artifacts
 
     sbt stage           # Build your application from your project’s source directory
 
     sbt run             # Run both backend and frontend builds in watch mode
 
-    sbt dist            # Build both backend and frontend sources into a single distribution
+    sbt dist            # Build both backend and frontend sources into a single distribution artifact
 
     sbt test            # Run both backend and frontend unit tests
 ```
 
+* This seed is not using [scala play views](https://www.playframework.com/documentation/2.6.x/ScalaTemplates). All the views and frontend associated routes are served via [React](https://reactjs.org/) code base under `ui` directory.
+
 ## Complete Directory Layout
 
 ```
-├── /app/                                 # The backend (java) application sources (controllers, models, views, assets)
-│     └── /controllers/                   # Contains backend controller files
-│           └── FrontendController.scala  # Frontend controller managing all static resource associate routes
+├── /app/                                 # The backend (scala play) sources (controllers, models, services)
+│     └── /controllers/                   # Backend controllers
+│           └── FrontendController.scala  # Asset controller wrapper serving frontend assets and artifacts
 ├── /conf/                                # Configurations files and other non-compiled resources (on classpath)
-│     ├── application.conf                # Builds the project from source to output(lib and bower) folder
+│     ├── application.conf                # Play application configuratiion file.
 │     ├── logback.xml                     # Logging configuration
-│     └── routes                          # Routes definition
-├── /logs/                                # Logs folder
-│     └── application.log                 # Default log file
-├── /project/                             # Sbt configuration files
-│     ├── FrontendCommands.scala          # Frontend build commands
+│     └── routes                          # Routes definition file
+├── /logs/                                # Log directory
+│     └── application.log                 # Application log file
+├── /project/                             # Contains project build configuration and plugins
+│     ├── FrontendCommands.scala          # Frontend build command mapping configuration
 │     ├── FrontendRunHook.scala           # Forntend build PlayRunHook (trigger frontend serve on sbt run)
 │     ├── build.properties                # Marker for sbt project
-│     └── plugins.sbt                     # Sbt plugins declaration
+│     └── plugins.sbt                     # SBT plugins declaration
 ├── /public/                              # Frontend build artifacts will be copied to this directory
-├── /target/                              # Generated stuff
+├── /target/                              # Play project build artifact directory
 │     ├── /universal/                     # Application packaging
 │     └── /web/                           # Compiled web assets
-├── /test/                                # Contains unit tests for java play sources
-├── /ui/                                  # React front end sources
+├── /test/                                # Contains unit tests of backend sources
+├── /ui/                                  # React frontend source (based on Create React App)
 │     ├── /public/                        # Contains the index.html file
 │     ├── /node_modules/                  # 3rd-party frontend libraries and utilities
-│     ├── /src/                           # The frontend source code (modules, componensts, models, directives, services etc.) of the application
+│     ├── /src/                           # The frontend source codebase of the application
 │     ├── .editorconfig                   # Define and maintain consistent coding styles between different editors and IDEs
 │     ├── .gitignore                      # Contains ui files to be ignored when pushing to git
-│     ├── package.json                    # Holds various metadata configuration relevant to the ui
+│     ├── package.json                    # NPM configuration of frontend source
 │     ├── README.md                       # Contains all user guide details for the ui
 │     └── yarn.lock                       # Yarn lock file
 ├── .gitignore                            # Contains files to be ignored when pushing to git
-├── build.sbt                             # Play application build script
-├── LICENSE                               # Contains License Agreement file
-├── README.md                             # Contains all user guide details for the application
-└── ui-build.sbt                          # Associated frontend build scripts with sbt
+├── build.sbt                             # Play application SBT configuration
+├── LICENSE                               # License Agreement file
+├── README.md                             # Application user guide
+└── ui-build.sbt                          # SBT command hooks associated with frontend npm scripts 
 ```
 
 ## What is new in here?
 
 ### FrontendCommands.scala
 
-* Represents available frontend build commands.
+* Frontend build command mapping configuration.
 
 ```
     ├── /project/
@@ -93,22 +94,31 @@ Read more @ http://bit.ly/2A1AzEq
 
 ### FrontendRunHook.scala
 
-* Represents PlayRunHook scala implementation to trigger react start with sbt run command.
+* PlayRunHook implementation to trigger ``npm run start`` on ``sbt run``.
 
 ```
     ├── /project/
     │     ├── FrontendRunHook.scala
 ```
 
+### FrontendController.scala
+
+* Asset controller wrapper serving frontend assets and artifacts.
+
+```
+    ├── /app/                                 
+    │     └── /controllers/                   
+    │           └── FrontendController.scala
+```
+
 ### ui-build.sbt
 
-* `ui-build.sbt` file to represent UI builds scrips implementations to run along with the available sbt commands.
-* This file is located in the root level of the project to work smoothly with the `build.sbt` file.
+* This file contains the build task hooks to trigger frontend npm scripts on sbt command execution.
 
 ### npm run commands
 
-* Added several new npm run commands in the `scripts` section of the package.json file in order to work smoothly with the sbt commands.
-* Check [UI README.md](./ui/README.md) to see the available front end build tasks.
+* New and modified npm scripts of [Create React App](https://github.com/facebookincubator/create-react-app) generated package.json.
+* Check [UI README.md](./ui/README.md) to see all available frontend build tasks.
 
 ```
 ├── /ui/                       
@@ -122,16 +132,24 @@ Read more @ http://bit.ly/2A1AzEq
 │     ├── routes
 ```
 
-* The following route configuration allows to map front end index.html to index route. This should be placed as the first route in this file.
+* The following route configuration map index.html to entry route (root). This should be placed as the initial route.
 
 ```
-GET        /             controllers.Assets.at(path="/public", file="index.html")
+GET        /             controllers.FrontendController.index()
 ```
 
-* THe following asset route is being used to serve all the build artifacts (css, js) and static files (images, etc.). This should be placed as the last route in route config file.
+* All API routes should be prefixed with API prefix defined under ``application.conf`` (Default prefix ``apiPrefix = "api"``) 
+
+Example API route:
 
 ```
-GET        /*file        controllers.Assets.at(path="/public", file)
+GET        /api/summary  controllers.HomeController.appSummary
+```
+
+* The following route is being used to serve frontend associated build artifacts (css, js) and static assets (images, etc.). This should be placed as the final route.
+
+```
+GET        /*file        controllers.FrontendController.assetOrDefault(file)
 ```
 
 **Note: _On production build all the front end React build artifacts will be copied to the `public` folder._**

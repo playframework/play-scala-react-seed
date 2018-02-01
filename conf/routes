@@ -2,11 +2,11 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Load index page
+# Serve index page from public directory
 GET     /                           controllers.FrontendController.index()
 
 # An example route
 GET     /api/summary                controllers.HomeController.appSummary
 
-# Map static resources from the /public folder to the file resource path
+# Serve static assets under public directory
 GET     /*file                      controllers.FrontendController.assetOrDefault(file)
