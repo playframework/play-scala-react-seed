@@ -42,14 +42,14 @@ def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnComm
 
 // Create frontend build tasks for prod, dev and test execution.
 
-lazy val `ui-test` = TaskKey[Unit]("Run UI tests when testing application.")
+lazy val `ui-test` = taskKey[Unit]("Run UI tests when testing application.")
 
 `ui-test` := {
   implicit val userInterfaceRoot = baseDirectory.value / "ui"
   if (executeUiTests != Success) throw new Exception("UI tests failed!")
 }
 
-lazy val `ui-prod-build` = TaskKey[Unit]("Run UI build when packaging the application.")
+lazy val `ui-prod-build` = taskKey[Unit]("Run UI build when packaging the application.")
 
 `ui-prod-build` := {
   implicit val userInterfaceRoot = baseDirectory.value / "ui"
