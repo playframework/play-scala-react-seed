@@ -7,7 +7,7 @@
 
 Read more @ http://bit.ly/2A1AzEq
 
-[![Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq)
+[![Scala Play React Seed](https://github.com/yohangz/scala-play-react-seed/blob/master/react.png)](http://bit.ly/2A1AzEq) [![Greenkeeper badge](https://badges.greenkeeper.io/yohangz/scala-play-react-seed.svg)](https://greenkeeper.io/)
 
 ## Version Summary
 
