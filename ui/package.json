@@ -10,13 +10,13 @@
   },
   "proxy": "http://localhost:9000",
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4"
   },
   "devDependencies": {
     "ncp": "^2.0.0",
-    "react-router-dom": "^4.2.2",
     "rimraf": "^2.6.2"
   }
 }
