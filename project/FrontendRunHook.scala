@@ -7,7 +7,7 @@ import scala.sys.process.Process
 
 /**
   * Frontend build play run hook.
-  * https://www.playframework.com/documentation/2.6.x/SBTCookbook
+  * https://www.playframework.com/documentation/2.7.x/SBTCookbook
   */
 object FrontendRunHook {
   def apply(base: File): PlayRunHook = {
@@ -16,15 +16,15 @@ object FrontendRunHook {
       var process: Option[Process] = None
 
       /**
-        * Change these commands if you want to use Yarn.
+        * Change the commands in `FrontendCommands.scala` if you want to use Yarn.
         */
-      var npmInstall: String = FrontendCommands.dependencyInstall
-      var npmRun: String = FrontendCommands.serve
+      var install: String = FrontendCommands.dependencyInstall
+      var run: String = FrontendCommands.serve
 
       // Windows requires npm commands prefixed with cmd /c
       if (System.getProperty("os.name").toLowerCase().contains("win")){
-        npmInstall = "cmd /c" + npmInstall
-        npmRun = "cmd /c" + npmRun
+        install = "cmd /c" + install
+        run = "cmd /c" + run
       }
 
       /**
@@ -32,7 +32,7 @@ object FrontendRunHook {
         * Run npm install if node modules are not installed.
         */
       override def beforeStarted(): Unit = {
-        if (!(base / "ui" / "node_modules").exists()) Process(npmInstall, base / "ui").!
+        if (!(base / "ui" / "node_modules").exists()) Process(install, base / "ui").!
       }
 
       /**
@@ -41,7 +41,7 @@ object FrontendRunHook {
         */
       override def afterStarted(): Unit = {
         process = Option(
-          Process(npmRun, base / "ui").run
+          Process(run, base / "ui").run
         )
       }
 
