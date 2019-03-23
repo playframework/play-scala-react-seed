@@ -10,10 +10,12 @@
   },
   "proxy": "http://localhost:9000",
   "dependencies": {
+    "kleur": "^3.0.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "typescript": "^3.3.4000"
   },
   "devDependencies": {
     "ncp": "^2.0.0",
