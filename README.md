@@ -11,8 +11,8 @@ Read more @ http://bit.ly/2A1AzEq
 
 ## Version Summary
 
-* [Play Framework: 2.7.0](https://www.playframework.com/documentation/2.7.x/Home)
-* [React: 16.8.5](https://reactjs.org/)
+* [Play Framework: 2.7.2](https://www.playframework.com/documentation/2.7.x/Home)
+* [React: 16.8.6](https://reactjs.org/)
 * [Create React App: 1.0.17](https://github.com/facebookincubator/create-react-app)
 
 ## How to use it?
