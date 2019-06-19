@@ -22,7 +22,7 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
       status(home) mustBe OK
       contentType(home) mustBe Some("application/json")
       val resultJson = contentAsJson(home)
-      resultJson.toString() mustBe """{"content":"Scala Play React Seed"}"""
+      resultJson.toString() mustBe """{"content":"Scala Play React Seed!"}"""
     }
 
     "render the appSummary resource from the application" in {
@@ -32,7 +32,7 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
       status(home) mustBe OK
       contentType(home) mustBe Some("application/json")
       val resultJson = contentAsJson(home)
-      resultJson.toString() mustBe """{"content":"Scala Play React Seed"}"""
+      resultJson.toString() mustBe """{"content":"Scala Play React Seed!"}"""
     }
 
     "render the appSummary resource from the router" in {
@@ -42,7 +42,7 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
       status(home) mustBe OK
       contentType(home) mustBe Some("application/json")
       val resultJson = contentAsJson(home)
-      resultJson.toString() mustBe """{"content":"Scala Play React Seed"}"""
+      resultJson.toString() mustBe """{"content":"Scala Play React Seed!"}"""
     }
   }
 }
