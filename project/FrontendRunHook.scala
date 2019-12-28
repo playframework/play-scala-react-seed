@@ -38,7 +38,7 @@ object FrontendRunHook {
         * Run npm start
         */
       override def afterStarted(): Unit = {
-        process = Option(
+        process = Some(
           Process(run, base / "ui").run
         )
       }
@@ -48,7 +48,7 @@ object FrontendRunHook {
         * Cleanup frontend execution processes.
         */
       override def afterStopped(): Unit = {
-        process.foreach(_.destroy())
+        process.foreach(p => p.destroy())
         process = None
       }
 
