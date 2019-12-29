@@ -5,7 +5,7 @@ import scala.sys.process.Process
 
 /**
   * Frontend build play run hook.
-  * https://www.playframework.com/documentation/2.7.x/SBTCookbook
+  * https://www.playframework.com/documentation/2.8.x/SBTCookbook
   */
 object FrontendRunHook {
   def apply(base: File): PlayRunHook = {
