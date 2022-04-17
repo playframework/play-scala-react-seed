@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "ncp": "^2.0.0",
+    "prettier": "2.6.2",
     "rimraf": "^2.6.3"
   },
   "proxy": "http://localhost:9000",
@@ -32,5 +33,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.18"
 }

@@ -18,5 +18,5 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.199"
 
 addCommandAlias(
   "validateCode",
-  "scalafmtSbtCheck; scalafmtCheckAll"
+  "scalafmtSbtCheck; scalafmtCheckAll; uiCodeStyleCheck"
 )
