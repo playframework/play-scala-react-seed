@@ -19,14 +19,20 @@ val isWindows = System.getProperty("os.name").toLowerCase().contains("win")
 
 // Execute on commandline, depending on the operating system. Used to execute npm commands.
 def runOnCommandline(script: String)(implicit dir: File): Int = {
-  if(isWindows){ Process("cmd /c set CI=true&&" + script, dir) } else { Process("env CI=true " + script, dir) } }!
+  if (isWindows) { Process("cmd /c set CI=true&&" + script, dir) }
+  else {
+    Process("env CI=true " + script, dir)
+  }
+} !
 
 // Check of node_modules directory exist in given directory.
-def isNodeModulesInstalled(implicit dir: File): Boolean = (dir / "node_modules").exists()
+def isNodeModulesInstalled(implicit dir: File): Boolean =
+  (dir / "node_modules").exists()
 
 // Execute `npm install` command to install all node module dependencies. Return Success if already installed.
 def runNpmInstall(implicit dir: File): Int =
-  if (isNodeModulesInstalled) Success else runOnCommandline(FrontendCommands.dependencyInstall)
+  if (isNodeModulesInstalled) Success
+  else runOnCommandline(FrontendCommands.dependencyInstall)
 
 // Execute task if node modules are installed, else return Error status.
 def ifNodeModulesInstalled(task: => Int)(implicit dir: File): Int =
@@ -34,11 +40,14 @@ def ifNodeModulesInstalled(task: => Int)(implicit dir: File): Int =
   else Error
 
 // Execute frontend test task. Update to change the frontend test task.
-def executeUiTests(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.test))
+def executeUiTests(implicit dir: File): Int = ifNodeModulesInstalled(
+  runOnCommandline(FrontendCommands.test)
+)
 
 // Execute frontend prod build task. Update to change the frontend prod build task.
-def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(runOnCommandline(FrontendCommands.build))
-
+def executeProdBuild(implicit dir: File): Int = ifNodeModulesInstalled(
+  runOnCommandline(FrontendCommands.build)
+)
 
 // Create frontend build tasks for prod, dev and test execution.
 
@@ -49,11 +58,13 @@ lazy val `ui-test` = taskKey[Unit]("Run UI tests when testing application.")
   if (executeUiTests != Success) throw new Exception("UI tests failed!")
 }
 
-lazy val `ui-prod-build` = taskKey[Unit]("Run UI build when packaging the application.")
+lazy val `ui-prod-build` =
+  taskKey[Unit]("Run UI build when packaging the application.")
 
 `ui-prod-build` := {
   implicit val userInterfaceRoot = baseDirectory.value / "ui"
-  if (executeProdBuild != Success) throw new Exception("Oops! UI Build crashed.")
+  if (executeProdBuild != Success)
+    throw new Exception("Oops! UI Build crashed.")
 }
 
 // Execute frontend prod build task prior to play dist execution.
