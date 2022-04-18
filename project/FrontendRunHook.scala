@@ -3,8 +3,7 @@ import sbt._
 
 import scala.sys.process.Process
 
-/**
-  * Frontend build play run hook.
+/** Frontend build play run hook.
   * https://www.playframework.com/documentation/2.8.x/SBTCookbook
   */
 object FrontendRunHook {
@@ -13,29 +12,27 @@ object FrontendRunHook {
 
       var process: Option[Process] = None
 
-      /**
-        * Change the commands in `FrontendCommands.scala` if you want to use Yarn.
+      /** Change the commands in `FrontendCommands.scala` if you want to use
+        * Yarn.
         */
       var install: String = FrontendCommands.dependencyInstall
       var run: String = FrontendCommands.serve
 
       // Windows requires npm commands prefixed with cmd /c
-      if (System.getProperty("os.name").toLowerCase().contains("win")){
+      if (System.getProperty("os.name").toLowerCase().contains("win")) {
         install = "cmd /c" + install
         run = "cmd /c" + run
       }
 
-      /**
-        * Executed before play run start.
-        * Run npm install if node modules are not installed.
+      /** Executed before play run start. Run npm install if node modules are
+        * not installed.
         */
       override def beforeStarted(): Unit = {
-        if (!(base / "ui" / "node_modules").exists()) Process(install, base / "ui").!
+        if (!(base / "ui" / "node_modules").exists())
+          Process(install, base / "ui").!
       }
 
-      /**
-        * Executed after play run start.
-        * Run npm start
+      /** Executed after play run start. Run npm start
         */
       override def afterStarted(): Unit = {
         process = Some(
@@ -43,9 +40,7 @@ object FrontendRunHook {
         )
       }
 
-      /**
-        * Executed after play run stop.
-        * Cleanup frontend execution processes.
+      /** Executed after play run stop. Cleanup frontend execution processes.
         */
       override def afterStopped(): Unit = {
         process.foreach(p => p.destroy())
