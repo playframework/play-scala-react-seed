@@ -26,3 +26,45 @@ jobs:
     uses: playframework/.github/.github/workflows/sbt.yml@v1
     with:
       cmd: sbt test
+
+  run-dev:
+    name: Run in development mode
+    needs:
+      - "tests"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # we don't know what commit the last tag was it's safer to get entire repo so previousStableVersion resolves
+          fetch-depth: 0
+
+      - name: Coursier Cache
+        uses: coursier/cache-action@v6.3
+
+      - name: Install Adoptium Temurin OpenJDK
+        uses: coursier/setup-action@v1.2.0-M3
+        with:
+          jvm: adoptium:8
+
+      - name: Build docker image
+        run: docker build -t play-scala-react-seed .
+
+      - name: Run docker image
+        run: docker run -p 3000:3000 -p 9000:9000 -d play-scala-react-seed
+
+      - name: Wait for backend
+        uses: cygnetdigital/wait_for_response@v2.0.0
+        with:
+          url: 'http://localhost:9000/api/summary'
+          responseCode: '200'
+          timeout: 60000
+          interval: 1000
+
+      - name: Wait for frontend
+        uses: cygnetdigital/wait_for_response@v2.0.0
+        with:
+          url: 'http://localhost:3000/'
+          responseCode: '200'
+          timeout: 60000
+          interval: 1000
