@@ -40,7 +40,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build docker image
-        run: docker build -f ..github/Dockerfile -t play-scala-react-seed .
+        run: docker build -f .github/Dockerfile -t play-scala-react-seed .
 
       - name: Run docker image
         run: docker run -p 3000:3000 -p 9000:9000 -d play-scala-react-seed
