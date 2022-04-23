@@ -1,4 +1,4 @@
-FROM hseeberger/scala-sbt:8u312_1.6.2_2.12.15
+FROM hseeberger/scala-sbt:8u312_1.6.2_2.13.8
 EXPOSE 3000
 EXPOSE 9000
 
