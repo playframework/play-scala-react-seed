@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
 import reactLogo from "./images/react.svg";
 import playLogo from "./images/play.svg";
@@ -8,8 +14,9 @@ import Client from "./Client";
 
 import "./App.css";
 
-const Tech = ({ match }) => {
-  return <div>Current Route: {match.params.tech}</div>;
+const Tech = () => {
+  const params = useParams();
+  return <div>Current Route: {params.tech}</div>;
 };
 
 class App extends Component {
@@ -47,7 +54,9 @@ class App extends Component {
               <img width="400" height="400" src={reactLogo} alt="React Logo" />
             </Link>
           </nav>
-          <Route path="/:tech" component={Tech} />
+          <Routes>
+            <Route path="/:tech" element={<Tech />} />
+          </Routes>
           <div>
             <h2>Check out the project on GitHub for more information</h2>
             <h3>
