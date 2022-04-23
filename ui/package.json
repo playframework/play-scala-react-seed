@@ -10,16 +10,16 @@
   },
   "private": true,
   "dependencies": {
-    "kleur": "^3.0.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.0.1"
+    "kleur": "^4.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "ncp": "^2.0.0",
-    "prettier": "2.6.2",
-    "rimraf": "^2.6.3"
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2"
   },
   "proxy": "http://localhost:9000",
   "browserslist": {
