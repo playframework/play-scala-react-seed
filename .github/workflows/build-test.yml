@@ -45,18 +45,11 @@ jobs:
       - name: Run docker image
         run: docker run -p 3000:3000 -p 9000:9000 -d play-scala-react-seed
 
+      - name: Download wait-for script
+        run: wget https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for
+
       - name: Wait for backend
-        uses: cygnetdigital/wait_for_response@v2.0.0
-        with:
-          url: 'http://localhost:9000/api/summary'
-          responseCode: '200'
-          timeout: 60000
-          interval: 1000
+        run: sh ./wait-for -t 60 http://localhost:9000/api/summary -- echo "Backend is up"
 
       - name: Wait for frontend
-        uses: cygnetdigital/wait_for_response@v2.0.0
-        with:
-          url: 'http://localhost:3000/'
-          responseCode: '200'
-          timeout: 60000
-          interval: 1000
+        run: sh ./wait-for -t 60 http://localhost:3000 -- echo "Frontend is up"
