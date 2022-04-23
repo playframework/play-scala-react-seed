@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { act } from 'react-dom/test-utils';
+import { act } from "react-dom/test-utils";
 
 import App from "./App";
 import Client from "./Client";
@@ -13,18 +13,17 @@ const render = () => {
     const root = createRoot(div);
     root.render(<App />);
   });
-}
+};
 
 jest.mock("../src/Client");
 
 describe("App tests", () => {
-
   it("renders without crashing", () => {
-    render()
+    render();
   });
 
   it("getSummary function should called exactly once", () => {
-    render()
+    render();
     expect(Client.getSummary.mock.calls.length).toBe(1);
   });
 });
