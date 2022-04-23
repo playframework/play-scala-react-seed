@@ -75,5 +75,5 @@ jobs:
       - name: Download wait-for script
         run: wget https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for
 
-      - name: Wait for backend
+      - name: Wait for application
         run: sh ./wait-for -t 60 http://localhost:9000 -- echo "Application is up"
