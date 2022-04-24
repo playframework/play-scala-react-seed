@@ -53,7 +53,9 @@ jobs:
       - name: Run docker image
         run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed
 
-      - name: Wait for application
+      - name: Setup scala-cli
         uses: VirtusLab/scala-cli-setup@main
+
+      - name: Wait for application
         working-directory: .github/integration-test
         run: scala-cli test . --java-opt "-Dapplication.port=${{ matrix.port }}"
