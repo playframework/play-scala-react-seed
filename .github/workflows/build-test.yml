@@ -54,7 +54,10 @@ jobs:
         run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed
 
       - name: Setup scala-cli
-        run: curl -sSLf https://virtuslab.github.io/scala-cli-packages/scala-setup.sh | sh
+        run: |
+          curl -fL https://github.com/VirtusLab/scala-cli/releases/download/v0.1.4/scala-cli-x86_64-pc-linux.gz | gzip -d > scala-cli
+          chmod +x scala-cli
+          mv scala-cli /usr/local/bin/scala-cli
 
       - name: Wait for application
         working-directory: .github/integration-test
