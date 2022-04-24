@@ -53,13 +53,8 @@ jobs:
       - name: Run docker image
         run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed
 
-      - name: Coursier Cache
-        uses: coursier/cache-action@v6.3
-
       - name: Setup scala-cli
-        uses: VirtusLab/scala-cli-setup@main
-        with:
-          apps: sbtn bloop
+        run: curl -sSLf https://virtuslab.github.io/scala-cli-packages/scala-setup.sh | sh
 
       - name: Wait for application
         working-directory: .github/integration-test
