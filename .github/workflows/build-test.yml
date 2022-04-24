@@ -27,16 +27,8 @@ jobs:
     with:
       cmd: sbt test
 
-  run-application:
-    strategy:
-      matrix:
-        mode: [development, production]
-        include:
-          - mode: development
-            port: 3000
-          - mode: production
-            port: 9000
-    name: Run in ${{ matrix.mode }} mode
+  run-dev:
+    name: Run in development mode
     needs:
       - "tests"
     runs-on: ubuntu-20.04
@@ -48,14 +40,40 @@ jobs:
           fetch-depth: 0
 
       - name: Build docker image
-        run: docker build -f .github/Dockerfile-${{ matrix.mode }} -t play-scala-react-seed .
+        run: docker build -f .github/Dockerfile-dev -t play-scala-react-seed .
 
       - name: Run docker image
-        run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed
+        run: docker run -p 3000:3000 -p 9000:9000 -d play-scala-react-seed
 
-      - name: Setup scala-cli
-        uses: VirtusLab/scala-cli-setup@main
+      - name: Download wait-for script
+        run: wget https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for
+
+      - name: Wait for backend
+        run: sh ./wait-for -t 60 http://localhost:9000/api/summary -- echo "Backend is up"
+
+      - name: Wait for frontend
+        run: sh ./wait-for -t 60 http://localhost:3000 -- echo "Frontend is up"
+
+  run-prod:
+    name: Run in production mode
+    needs:
+      - "tests"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # we don't know what commit the last tag was it's safer to get entire repo so previousStableVersion resolves
+          fetch-depth: 0
+
+      - name: Build docker image
+        run: docker build -f .github/Dockerfile-prod -t play-scala-react-seed .
+
+      - name: Run docker image
+        run: docker run -p 9000:9000 -d play-scala-react-seed
+
+      - name: Download wait-for script
+        run: wget https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for
 
       - name: Wait for application
-        working-directory: .github/integration-test
-        run: scala-cli test . --java-opt "-Dapplication.port=${{ matrix.port }}"
+        run: sh ./wait-for -t 60 http://localhost:9000 -- echo "Application is up"
