@@ -8,6 +8,7 @@ import org.scalatest.matchers.should._
 import org.scalatestplus.selenium._
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
 import org.scalatest.OptionValues
 import org.scalatest.concurrent.Eventually
 import scala.concurrent.duration._
@@ -22,7 +23,20 @@ class IntegrationTestSuite
   implicit override val patienceConfig =
     PatienceConfig(timeout = 60.seconds, interval = 100.millis)
 
-  implicit val webDriver: WebDriver = new ChromeDriver
+  val chromeOptions: ChromeOptions = {
+    val value = new ChromeOptions
+    value.addArguments(
+      "--disable-gpu",
+      "--window-size=1920,1200",
+      "--ignore-certificate-errors",
+      "--disable-extensions",
+      "--no-sandbox",
+      "--disable-dev-shm-usage",
+      "--headless"
+    )
+    value
+  }
+  implicit val webDriver: WebDriver = new ChromeDriver(chromeOptions)
 
   val port = sys.props
     .get("application.port")
