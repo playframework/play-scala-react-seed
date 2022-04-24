@@ -30,7 +30,7 @@ jobs:
   run-application:
     strategy:
       matrix:
-        mode: [dev, prod]
+        mode: [development, production]
         include:
           - mode: development
             port: 3000
