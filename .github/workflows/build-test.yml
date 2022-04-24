@@ -55,6 +55,8 @@ jobs:
 
       - name: Setup scala-cli
         uses: VirtusLab/scala-cli-setup@main
+        with:
+          apps: sbtn bloop
 
       - name: Wait for application
         working-directory: .github/integration-test
