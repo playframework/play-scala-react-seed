@@ -27,7 +27,7 @@ jobs:
     with:
       cmd: sbt test
 
-  run:
+  run-application:
     strategy:
       matrix:
         mode: [dev, prod]
