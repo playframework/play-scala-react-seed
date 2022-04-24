@@ -53,6 +53,9 @@ jobs:
       - name: Run docker image
         run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed
 
+      - name: Coursier Cache
+        uses: coursier/cache-action@v6.3
+
       - name: Setup scala-cli
         uses: VirtusLab/scala-cli-setup@main
         with:
