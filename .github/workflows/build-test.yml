@@ -61,4 +61,4 @@ jobs:
 
       - name: Wait for application
         working-directory: .github/integration-test
-        run: scala-cli test . -v -v -v -v --java-opt "-Dapplication.port=${{ matrix.port }}"
+        run: scala-cli test . --server=false --java-opt "-Dapplication.port=${{ matrix.port }}"
