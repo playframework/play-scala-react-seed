@@ -11,9 +11,9 @@ Read more @ http://bit.ly/2A1AzEq
 
 ## Version Summary
 
-* [Play Framework: 2.8.15](https://www.playframework.com/documentation/2.8.15/Home)
-* [React: 18.0.0](https://reactjs.org/)
-* [Create React App: 5.0.1](https://github.com/facebookincubator/create-react-app)
+* [Play Framework: @PLAY_VERSION@](https://www.playframework.com/documentation/@PLAY_VERSION@/Home)
+* [React: @REACT_VERSION@](https://reactjs.org/)
+* [Create React App: @REACT_SCRIPTS_VERSION@](https://github.com/facebookincubator/create-react-app)
 
 ## How to use it?
 
