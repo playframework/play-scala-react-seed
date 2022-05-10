@@ -13,6 +13,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check-docs:
+    name: Check docs
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # we don't know what commit the last tag was it's safer to get entire repo so previousStableVersion resolves
+          fetch-depth: 0
+
+      - name: Setup scala-cli
+        uses: VirtusLab/scala-cli-setup@main
+        with:
+          scala-cli-version: 0.1.4
+
+      - name: Run mdoc
+        working-directory: .github/docs
+        run: scala-cli run .
+
+      - name: Check if docs are up to date
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "README outdated, please run "sbt docs/mdoc" and commit changes."
+            exit 1
+          else 
+            echo "README up to date."
+          fi
+
   check-code-style:
     name: Code Style
     uses: playframework/.github/.github/workflows/sbt.yml@v1
@@ -48,7 +76,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build docker image
-        run: docker build -f .github/Dockerfile-${{ matrix.mode }} -t play-scala-react-seed .
+        run: docker build -f .github/integration-test/Dockerfile-${{ matrix.mode }} -t play-scala-react-seed .
 
       - name: Run docker image
         run: docker run -p ${{ matrix.port }}:${{ matrix.port }} -d play-scala-react-seed

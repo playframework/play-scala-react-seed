@@ -63,9 +63,9 @@ class App extends Component {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/yohangz/scala-play-react-seed"
+                href="https://github.com/playframework/play-scala-react-seed"
               >
-                scala-play-react-seed
+                play-scala-react-seed
               </a>
             </h3>
           </div>
