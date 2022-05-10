@@ -35,7 +35,7 @@ jobs:
       - name: Check if docs are up to date
         run: |
           if [[ -n $(git status -s) ]]; then
-            echo "README outdated, please run "sbt docs/mdoc" and commit changes."
+            echo "README outdated, please run 'scala-cli run .' in '.github/docs' and commit changes."
             exit 1
           else 
             echo "README up to date."
