@@ -12,7 +12,7 @@ Read more @ http://bit.ly/2A1AzEq
 ## Version Summary
 
 * [Play Framework: 2.8.15](https://www.playframework.com/documentation/2.8.15/Home)
-* [React: 18.1.0](https://reactjs.org/)
+* [React: 18.2.0](https://reactjs.org/)
 * [Create React App: 5.0.1](https://github.com/facebookincubator/create-react-app)
 
 ## How to use it?
