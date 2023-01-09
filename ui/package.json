@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "ncp": "^2.0.0",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "rimraf": "^3.0.2"
   },
   "proxy": "http://localhost:9000",
