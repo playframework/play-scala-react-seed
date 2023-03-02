@@ -19,7 +19,7 @@
   "devDependencies": {
     "ncp": "^2.0.0",
     "prettier": "^2.8.4",
-    "rimraf": "^4.1.2"
+    "rimraf": "^4.1.3"
   },
   "proxy": "http://localhost:9000",
   "browserslist": {
