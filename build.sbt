@@ -13,7 +13,7 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 scalaVersion := "2.13.12"
 
 libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0" % Test
 
 addCommandAlias(
   "validateCode",
