@@ -1,3 +1,5 @@
+import sbt.Package.FixedTimestamp
+
 name := """play-scala-react-seed"""
 
 version := "1.0-SNAPSHOT"
@@ -5,7 +7,8 @@ version := "1.0-SNAPSHOT"
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .settings(
-    watchSources ++= (baseDirectory.value / "public/ui" ** "*").get
+    watchSources ++= (baseDirectory.value / "public/ui" ** "*").get,
+    ThisBuild / packageOptions += FixedTimestamp(Package.keepTimestamps)
   )
 
 resolvers += Resolver.sonatypeRepo("snapshots")
