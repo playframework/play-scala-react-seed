@@ -13,7 +13,7 @@ lazy val root = (project in file("."))
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.13"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
