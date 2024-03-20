@@ -2,8 +2,8 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { act } from "react-dom/test-utils";
 
-import App from "./App";
-import Client from "./Client";
+import App from "../src/App";
+import Client from "../src/utils/Client";
 
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -15,7 +15,7 @@ const render = () => {
   });
 };
 
-jest.mock("../src/Client");
+jest.mock("../src/utils/Client");
 
 describe("App tests", () => {
   it("renders without crashing", () => {

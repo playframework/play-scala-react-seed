@@ -1,0 +1,146 @@
+
+
+.rts-img-reveal[data-fx="1"]::after,
+.rts-img-reveal[data-fx="2"]::after {
+	content: '';
+	z-index: -1;
+	width: 100%;
+	bottom: 0.25rem;
+	left: 0;
+	position: absolute;
+	height: 2px;
+	background: currentColor;
+	-webkit-transform: scale3d(0,1,1);
+	        transform: scale3d(0,1,1);
+	-webkit-transform-origin: 0% 50%;
+	    -ms-transform-origin: 0% 50%;
+	        transform-origin: 0% 50%;
+	-webkit-transition: -webkit-transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	transition: -webkit-transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	-o-transition: transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	transition: transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	transition: transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000), -webkit-transform 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	text-align: center;
+}
+
+.rts-img-reveal[data-fx="1"]::after,
+.rts-img-reveal[data-fx="2"]::after {
+	bottom: 0;
+}
+
+.rts-img-reveal[data-fx="1"]:hover::after,
+.rts-img-reveal[data-fx="2"]:hover::after {
+	-webkit-transform: scale3d(1,1,1);
+	        transform: scale3d(1,1,1)
+}
+
+.rts-img-reveal[data-fx="6"]::after {
+	content: '';
+	z-index: -1;
+	width: 100%;
+	bottom: 0.25rem;
+	left: 0;
+	position: absolute;
+	height: 2px;
+	background: currentColor;
+	-webkit-transform: scale3d(0,1,1);
+	        transform: scale3d(0,1,1);
+	-webkit-transform-origin: 100% 50%;
+	    -ms-transform-origin: 100% 50%;
+	        transform-origin: 100% 50%;
+	-webkit-transition: -webkit-transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+	transition: -webkit-transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+	-o-transition: transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+	transition: transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+	transition: transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000), -webkit-transform 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+
+.rts-img-reveal[data-fx="6"]::after {
+	bottom: 0;
+}
+
+
+.rts-img-reveal[data-fx="6"]:hover::after {
+	-webkit-transform: scale3d(1,1,1);
+	        transform: scale3d(1,1,1)
+}
+
+
+.rts-img-reveal[data-fx="14"]::after {
+	content: '';
+	z-index: -1;
+	width: 100%;
+	bottom: 0.25rem;
+	left: 0;
+	position: absolute;
+	height: 2px;
+	background: currentColor;
+	-webkit-transform: scale3d(0,1,1);
+	        transform: scale3d(0,1,1);
+	-webkit-transform-origin: 0% 50%;
+	    -ms-transform-origin: 0% 50%;
+	        transform-origin: 0% 50%;
+}
+
+.rts-img-reveal[data-fx="14"]::after {
+	bottom: 0;
+}
+
+.rts-img-reveal[data-fx="14"]:hover::after {
+	-webkit-animation: loop 0.5s infinite;
+	        animation: loop 0.5s infinite;
+}
+
+@-webkit-keyframes loop {
+	0% { -webkit-transform-origin: 0% 50%; transform-origin: 0% 50%; -webkit-transform: scale3d(0,1,1); transform: scale3d(0,1,1); }
+	50% { -webkit-transform-origin: 0% 50%; transform-origin: 0% 50%; -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+	51% { -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%; }
+	100% { -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%; -webkit-transform: scale3d(0,1,1); transform: scale3d(0,1,1); }
+}
+
+@keyframes loop {
+	0% { -webkit-transform-origin: 0% 50%; transform-origin: 0% 50%; -webkit-transform: scale3d(0,1,1); transform: scale3d(0,1,1); }
+	50% { -webkit-transform-origin: 0% 50%; transform-origin: 0% 50%; -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+	51% { -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%; }
+	100% { -webkit-transform-origin: 100% 50%; transform-origin: 100% 50%; -webkit-transform: scale3d(0,1,1); transform: scale3d(0,1,1); }
+}
+
+.rts-img-reveal-wrapper {
+	position: fixed;
+	width: 250px;
+	height: 270px;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 9;
+	
+}
+
+.rts-img-reveal-wrapper__inner,
+.rts-img-reveal-wrapper__img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.rts-img-reveal-wrapper__deco {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #181314;
+}
+
+.rts-img-reveal-wrapper__img {
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+
+
+.test-2{
+    padding: 50px;
+    background-color: #292930;
+}

@@ -10,9 +10,9 @@ import {
 import reactLogo from "./images/react.svg";
 import playLogo from "./images/play.svg";
 import scalaLogo from "./images/scala.svg";
-import Client from "./Client";
+import Client from "./utils/Client";
 
-import "./App.css";
+import "./styles/App.css";
 
 const Tech = () => {
   const params = useParams();
