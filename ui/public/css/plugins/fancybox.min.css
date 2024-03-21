@@ -80,7 +80,7 @@
     background-image: url(fancybox_sprite.png)
 }
 .fancybox-close{
-    background-image: url(../../images/banner/shape/close.png);
+    background-image: url(../../../src/assets/images/banner/shape/close.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -268,7 +268,7 @@ only screen and (min-device-pixel-ratio:1.5) {
     .fancybox-close,
     .fancybox-prev span,
     .fancybox-next span {
-        background-image: url(../../images/banner/shape/close.png);
+        background-image: url(../../../src/assets/images/banner/shape/close.png);
         background-size: 44px 152px
     }
 
