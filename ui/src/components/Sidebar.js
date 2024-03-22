@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faTimes, faPhone, faEnvelope, faGlobe, faMapMarkedAlt} from "@fortawesome/free-solid-svg-icons";
+import {faTimes, faPhone, faEnvelope, faGlobe, faMapMarker} from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faInstagram, faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import logo from '../assets/images/logo/logo-1.png';
 
@@ -38,7 +38,7 @@ const Sidebar = () => {
                 <a href="#">www.webexample.com</a>
               </div>
               <div className="single">
-                <i className="fas"><FontAwesomeIcon icon={faMapMarkedAlt} /></i>
+                <i className="fas"><FontAwesomeIcon icon={faMapMarker} /></i>
                 <a href="#">13/A, New Pro State, NYC</a>
               </div>
             </div>
