@@ -16,7 +16,8 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "@fortawesome/react-fontawesome": "^0.1.15",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4"
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/free-brands-svg-icons": "5.15.4"
   },
   "devDependencies": {
     "ncp": "^2.0.0",
