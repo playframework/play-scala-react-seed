@@ -8,6 +8,7 @@ import {
 
 import Header from "./components/Header";
 import Banner from "./components/Banner";
+import Sidebar from "./components/Sidebar";
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
+          <Sidebar />
           <Banner />
         </div>
       </Router>

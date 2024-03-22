@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import logo from '../assets/images/logo/logo-1.png';
 
 const Header = () => {
   return (
@@ -7,8 +10,7 @@ const Header = () => {
         <div class="row align-items-center">
           <div class="col-lg-2 col-md-3 col-4">
             <a href="index.html" class="thumbnail">
-              <img class="active-light" src="../assets/images/logo/logo-1.png" alt="axela-logo" />
-              <img class="active-dark" src="../assets/images/logo/logo-2.svg" alt="axela-logo" />
+              <img class="active-light" src={logo} alt="axela-logo" />
             </a>
           </div>
           <div class="col-lg-7 d-none d-xl-block">
@@ -17,7 +19,7 @@ const Header = () => {
                 <ul className="mainmenu">
 
                   <li className="has-droupdown">
-                    <a href="#">Home</a>
+                    <a href="#">Home <FontAwesomeIcon icon={faChevronDown} /></a>
                     <ul className="submenu home-mega">
                       <li className="m-1">
                         <ul className="multiple">
@@ -45,14 +47,14 @@ const Header = () => {
                     <a href="about.html">About</a>
                   </li>
                   <li className="has-droupdown">
-                    <a href="#">Services</a>
+                    <a href="#">Services <FontAwesomeIcon icon={faChevronDown} /></a>
                     <ul className="submenu">
                       <li><a className="single" href="service.html">Our Services</a></li>
                       <li><a className="single" href="service-details.html">Service Details</a></li>
                     </ul>
                   </li>
                   <li className="has-droupdown">
-                    <a href="#">Pages</a>
+                    <a href="#">Pages <FontAwesomeIcon icon={faChevronDown} /></a>
                     <ul className="submenu home-mega home-mega2">
                       <li className="m-1">
                         <ul className="multiple">
@@ -87,7 +89,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-droupdown">
-                    <a href="#">Blog</a>
+                    <a href="#">Blog <FontAwesomeIcon icon={faChevronDown} /></a>
                     <ul className="submenu">
                       <li><a className="single" href="blog-list.html">Blog List</a></li>
                       <li><a className="single" href="blog-grid.html">Blog Grid</a></li>

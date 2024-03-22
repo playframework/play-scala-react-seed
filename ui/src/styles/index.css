@@ -126,6 +126,7 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
     overflow: hidden;
@@ -9867,31 +9868,31 @@ Background Image
 }
 
 .bg_image--1 {
-  background-image: url(../assets/images/bg/bg-image-1.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-1.jpg);
 }
 
 .bg_image--2 {
-  background-image: url(../assets/images/bg/bg-image-2.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-2.jpg);
 }
 
 .bg_image--3 {
-  background-image: url(../assets/images/bg/bg-image-3.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-3.jpg);
 }
 
 .bg_image--4 {
-  background-image: url(../assets/images/bg/bg-image-4.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-4.jpg);
 }
 
 .bg_image--5 {
-  background-image: url(../assets/images/bg/bg-image-5.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-5.jpg);
 }
 
 .bg_image--6 {
-  background-image: url(../assets/images/bg/bg-image-6.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-6.jpg);
 }
 
 .bg_image--7 {
-  background-image: url(../assets/images/bg/bg-image-7.jpg);
+  background-image: url(../../src/assets/images/bg/bg-image-7.jpg);
 }
 
 /*.bg_image--8 {*/
@@ -15084,7 +15085,7 @@ body {
 }
 
 #anywhere-home {
-  cursor: url(../assets/images/banner/shape/close.png), auto;
+  cursor: url(../../src/assets/images/banner/shape/close.png), auto;
   background: #0e1013;
   position: fixed;
   width: 100%;
@@ -15112,10 +15113,10 @@ body {
 }
 .mainmenu .has-droupdown > a::after {
   position: absolute;
-  content: "\f078";
+  /*content: "\f078";*/
   right: -18px;
   top: 34%;
-  font-family: "Font Awesome 5 pro";
+  /*font-family: "Font Awesome 5 pro";*/
   font-size: 14px;
 }
 .mainmenu .has-droupdown:hover > a {
@@ -15548,7 +15549,7 @@ body {
   content: "";
   top: 0%;
   left: -20%;
-  background-image: url(../assets/images/banner/shape/02.png);
+  background-image: url(../../src/assets/images/banner/shape/02.png);
   background-size: cover;
   height: 52px;
   width: 52px;
@@ -15582,7 +15583,7 @@ body {
   content: "";
   top: -64%;
   left: -70%;
-  background-image: url(../assets/images/banner/shape/03.png);
+  background-image: url(../../src/assets/images/banner/shape/03.png);
   height: 800px;
   width: 100%;
   background-size: cover;
@@ -15607,7 +15608,7 @@ body {
   content: "";
   bottom: -35%;
   left: -18%;
-  background-image: url(../assets/images/banner/shape/04.png);
+  background-image: url(../../src/assets/images/banner/shape/04.png);
   height: 406.93px;
   width: 935.04px;
   background-size: contain;
@@ -15630,7 +15631,7 @@ body {
   content: "";
   bottom: 0;
   left: -8%;
-  background-image: url(../assets/images/banner/shape/05.png);
+  background-image: url(../../src/assets/images/banner/shape/05.png);
   width: 88px;
   height: 88px;
   background-repeat: no-repeat;
@@ -15651,7 +15652,7 @@ body {
   content: "";
   bottom: 29%;
   left: -21%;
-  background-image: url(../assets/images/banner/shape/06.png);
+  background-image: url(../../src/assets/images/banner/shape/06.png);
   width: 28px;
   height: 28px;
   background-repeat: no-repeat;
@@ -15684,7 +15685,7 @@ a.rts-read-more:hover i {
 .banner-two-parent::after {
   position: absolute;
   content: "";
-  background-image: url(../assets/images/banner/shape/07.png);
+  background-image: url(../../src/assets/images/banner/shape/07.png);
   left: -21%;
   top: -7%;
   height: 100%;
@@ -15697,7 +15698,7 @@ a.rts-read-more:hover i {
 .banner-two-parent::before {
   position: absolute;
   content: "";
-  background-image: url(../assets/images/banner/shape/08.png);
+  background-image: url(../../src/assets/images/banner/shape/08.png);
   right: -64%;
   top: 15%;
   height: 100%;
@@ -16286,7 +16287,7 @@ a.rts-read-more:hover i {
 .rts-banner-five-area .swiper-button-wrapper .swiper-button-next::after {
   content: "";
   background: transparent;
-  background-image: url(../assets/images/banner/shape/arrow-r.svg);
+  background-image: url(../../src/assets/images/banner/shape/arrow-r.svg);
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;
@@ -16315,7 +16316,7 @@ a.rts-read-more:hover i {
 .rts-banner-five-area .swiper-button-wrapper .swiper-button-prev::after {
   content: "";
   background: transparent;
-  background-image: url(../assets/images/banner/shape/arrow-l.svg);
+  background-image: url(../../src/assets/images/banner/shape/arrow-l.svg);
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;
@@ -16370,7 +16371,7 @@ a.rts-read-more:hover i {
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 50px;
-  cursor: url(../assets/images/logo/tap.png), auto;
+  cursor: url(../../src/assets/images/logo/tap.png), auto;
 }
 @media screen and (max-width: 1250px) {
   .swiper-container-h .swiper-wrapper .swiper-slide .slider-inner .swiper-content .title-area .title {
@@ -16952,7 +16953,7 @@ a.rts-read-more:hover i {
   }
 }
 .rts-vedio-area.vedio-area-home-two .vedio-icone a::after {
-  background-image: url(../assets/images/banner/shape/11.png);
+  background-image: url(../../src/assets/images/banner/shape/11.png);
   width: 180px;
   height: 180px;
   animation: rotateIt2 8s linear infinite;
@@ -22348,7 +22349,7 @@ p.disc {
   left: 0;
   top: 0;
   transition: 0.3s;
-  cursor: url(../assets/images/banner/shape/icon-play.png), auto;
+  cursor: url(../../src/assets/images/banner/shape/icon-play.png), auto;
 }
 .digital-home-vedio .btn-watch-video::after {
   display: none;

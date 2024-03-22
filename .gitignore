@@ -8,3 +8,5 @@ target
 /RUNNING_PID
 /public
 .bsp
+.DS_store
+project.*
