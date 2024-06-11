@@ -1,11 +1,12 @@
 name: Check
 
 on:
+  pull_request:
+
   push:
     branches:
-      - main
+      - main # Check branch after merge
     tags: ["*"]
-  pull_request:
 
 concurrency:
   # Only run once for latest commit per ref and cancel other (previous) runs.
@@ -43,17 +44,19 @@ jobs:
 
   check-code-style:
     name: Code Style
-    uses: playframework/.github/.github/workflows/sbt.yml@v1
+    uses: playframework/.github/.github/workflows/cmd.yml@v3
     with:
       cmd: sbt validateCode
 
   tests:
     name: Tests
-    needs: # Waiting more lightweight checks
+    needs:
       - "check-code-style"
-    uses: playframework/.github/.github/workflows/sbt.yml@v1
+    uses: playframework/.github/.github/workflows/cmd.yml@v3
     with:
-      cmd: sbt test
+      java: 17, 11
+      scala: 2.13.x
+      cmd: sbt ++$MATRIX_SCALA test
 
   run-application:
     strategy:
@@ -89,3 +92,11 @@ jobs:
       - name: Wait for application
         working-directory: .github/integration-test
         run: scala-cli test . --server=false --java-opt "-Dapplication.port=${{ matrix.port }}"
+
+  finish:
+    name: Finish
+    if: github.event_name == 'pull_request'
+    needs: # Should be last
+      - "tests"
+      - "run-application"
+    uses: playframework/.github/.github/workflows/rtm.yml@v3

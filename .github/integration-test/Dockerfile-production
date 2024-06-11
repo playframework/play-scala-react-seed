@@ -1,4 +1,4 @@
-FROM hseeberger/scala-sbt:8u312_1.6.2_2.13.8
+FROM hseeberger/scala-sbt:eclipse-temurin-11.0.14.1_1.6.2_2.13.8
 EXPOSE 9000
 
 RUN ln -s /usr/local/openjdk-8/bin/java /usr/bin/java
