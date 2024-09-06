@@ -1,4 +1,4 @@
-//> using scala "2.12.19"
+//> using scala "2.12.20"
 //> using lib "org.scalameta::mdoc:2.3.2"
 
 import java.nio.file.Path
